@@ -118,7 +118,7 @@ export const LoginView: React.FC = React.memo(() => {
           {t('登录')}
         </PrimaryBtn>
 
-        {!disableUserRegister && (
+        {/* {!disableUserRegister && (
           <SecondaryBtn
             disabled={loading}
             onClick={() => navToView('/entry/register')}
@@ -136,7 +136,7 @@ export const LoginView: React.FC = React.memo(() => {
             {t('游客访问')}
             <Icon icon="mdi:arrow-right" className="ml-1 inline" />
           </SecondaryBtn>
-        )}
+        )} */}
 
         {pluginLoginAction.map((item) => {
           const { name, component: Component } = item;

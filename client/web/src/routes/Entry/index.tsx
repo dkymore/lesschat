@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { LoginView } from './LoginView';
 import clsx from 'clsx';
@@ -9,11 +9,41 @@ import { useRecordMeasure } from '@/utils/measure-helper';
 import { GuestView } from './GuestView';
 import { ForgetPasswordView } from './ForgetPasswordView';
 
+function getRandomElement<T>(array: T[]): T {
+  if (array.length === 0) {
+    throw new Error('Cannot get a random element from an empty array');
+  }
+
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+
 const EntryRoute = React.memo(() => {
   useRecordMeasure('appEntryRenderStart');
 
+  const divRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (divRef.current) {
+      divRef.current.style.setProperty(
+        '--tc-background-image',
+        getRandomElement([
+          'url(/bg/77992108_p0.webp)',
+          'url(/bg/83808930_p0.webp)',
+          'url(/bg/91828089_p0.webp)',
+          'url(/bg/96217890_p0.webp)',
+          'url(/bg/107871192_p0.webp)',
+          'url(/bg/124719914_p0.webp)',
+          'url(/bg/132641568_p0.webp)',
+          'url(/bg/vrc_moblie.webp)',
+          'url(/bg/vrc_pc.webp)',
+          'url(/bg/yiln_moblie.webp)',
+        ])
+      );
+    }
+  });
+
   return (
-    <div className="h-full flex flex-row">
+    <div className="h-full flex flex-row" ref={divRef}>
       <div
         className={clsx(
           styles.entryLeft,
