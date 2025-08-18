@@ -1,3 +1,0 @@
-name = "lesschat"
-compatibility_date = "2024-09-19"
-assets = { directory = "./client/web/dist" }
