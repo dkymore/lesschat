@@ -118,6 +118,15 @@ const AppContainer: React.FC<PropsWithChildren> = React.memo((props) => {
 });
 AppContainer.displayName = 'AppContainer';
 
+function getRandomElement<T>(array: T[]): T {
+  if (array.length === 0) {
+    throw new Error('Cannot get a random element from an empty array');
+  }
+
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+
 const AppHeader: React.FC = React.memo(() => {
   const { language } = useLanguage();
   const { serverName, serverEntryImage } = useGlobalConfigStore((state) => ({

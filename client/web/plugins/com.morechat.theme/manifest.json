@@ -1,0 +1,11 @@
+{
+  "label": "MoreChat Theme",
+  "label.zh-CN": "MoreChat主题",
+  "name": "com.morechat.theme",
+  "url": "/plugins/com.morechat.theme/index.js",
+  "version": "0.0.0",
+  "author": "more",
+  "description": "MoreChat Theme",
+  "description.zh-CN": "MoreChat主题",
+  "requireRestart": false
+}

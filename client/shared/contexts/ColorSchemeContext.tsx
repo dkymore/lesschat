@@ -10,17 +10,15 @@ const ColorSchemeContext = React.createContext<{
   colorScheme: string;
   setColorScheme: (colorScheme: string) => void;
 }>({
-  colorScheme: 'dark',
+  colorScheme: 'light+morechat',
   setColorScheme: () => {},
 });
 ColorSchemeContext.displayName = 'ColorSchemeContext';
 
 export const ColorSchemeContextProvider: React.FC<PropsWithChildren> =
   React.memo((props) => {
-    const [colorScheme = 'dark', { save: setColorScheme }] = useStorage(
-      'colorScheme',
-      'dark'
-    );
+    const [colorScheme = 'light+morechat', { save: setColorScheme }] =
+      useStorage('colorScheme', 'light+morechat');
 
     useEffect(() => {
       sharedEvent.emit('loadColorScheme', colorScheme);

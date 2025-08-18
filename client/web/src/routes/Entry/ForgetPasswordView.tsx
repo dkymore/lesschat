@@ -55,7 +55,7 @@ export const ForgetPasswordView: React.FC = React.memo(() => {
       <div className="mb-4 text-2xl">{t('忘记密码')}</div>
 
       <div>
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <div className="mb-2">{t('邮箱')}</div>
           <EntryInput
             name="forget-email"
@@ -100,7 +100,7 @@ export const ForgetPasswordView: React.FC = React.memo(() => {
               {t('重设密码')}
             </PrimaryBtn>
           </>
-        )}
+        )} */}
 
         <SecondaryBtn
           disabled={loading}
