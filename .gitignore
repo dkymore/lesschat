@@ -3,6 +3,8 @@ client/locales
 .vercel
 .DS_Store
 
+dist
+
 # yalc
 .yalc
 yalc.lock
